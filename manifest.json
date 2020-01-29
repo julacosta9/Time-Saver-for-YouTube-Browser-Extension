@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Time Save Calculator",
+    "options_page": "html/options.html",
+    "version": "1.0",
+    "description": "Display the time saved by speeding up video playback",
+    // "background": {
+    //     "persistent": false,
+    //     "scripts": ["js/background.js"]
+    // },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["timeSaveCalculation.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": ["script.js"],
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "webNavigation",
+        "https://www.youtube.com/"
+    ],
+    "page_action": {
+        "default_popup": "html/popup.html",
+        "default_icon": {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+        },
+        "icons": {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+        }
+    }
+}
+
+// TODO
+    // don't display anything if speed is set to normal
+    // say how long video is if playback rate is less than 1
+    // [COMPLETE] somehow account for dark mode
+    // [COMPLETE] figure out better config for mutation observer
+    // figure out the content script match parameter in the manifest  *://www.youtube.com/watch*
+    // get code to run on every page load/url change
