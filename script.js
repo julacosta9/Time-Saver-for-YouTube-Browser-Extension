@@ -2,15 +2,17 @@ let moviePlayer;
 let duration;
 let playbackRate;
 let timeSavedDiv;
-let textColor;
-let url = window.location.href;
+let textColor = "#606060";
+// let url = window.location.href;
 
-renderTimeSaveText();
-toggleDarkModeText();
+setTimeout(function() {
+    console.log(document.getElementById("info-text"));
+    renderTimeSaveText();
+    toggleDarkModeText();
+}, 700);
 
 function renderTimeSaveText() {
     moviePlayer = document.getElementById("movie_player");
-    console.log(moviePlayer);
     duration = moviePlayer.getDuration(); // returns duration in seconds
     playbackRate = moviePlayer.getPlaybackRate();
 
@@ -19,15 +21,13 @@ function renderTimeSaveText() {
         return;
     }
 
-    let adjustedDuration = duration / playbackRate;
-    let timeSaved_minutes = ((duration - adjustedDuration) / 60)
-        .toString()
-        .split(".")[0];
-    let timeSaved_seconds = Math.round((duration - adjustedDuration) % 60);
+    let newDuration = duration / playbackRate;
+    let timeSaved_minutes = Math.floor(Math.abs((duration - newDuration) / 60));
+    let timeSaved_seconds = Math.abs(Math.round((duration - newDuration) % 60));
 
     console.log(
-        "adjustedDuration: " +
-            adjustedDuration +
+        "newDuration: " +
+            newDuration +
             " timeSaved_minutes: " +
             timeSaved_minutes +
             " timeSaved_seconds: " +
@@ -46,9 +46,13 @@ function renderTimeSaveText() {
         textColor +
         "; font-size: 1.4rem; font-weight: 400;";
 
+    let save_or_lose_text = playbackRate >= 1 ? "Save" : "Lose";
+
     console.log(timeSavedDiv);
     timeSavedDiv.textContent =
-        " • Save " +
+        " • " +
+        save_or_lose_text +
+        " " +
         timeSaved_minutes +
         "m" +
         timeSaved_seconds +
@@ -62,18 +66,22 @@ function renderTimeSaveText() {
 let counter = 1;
 function updatePlaybackRate() {
     // console.log(counter++);
-    playbackRate = document.getElementById("movie_player").getPlaybackRate();
+    playbackRate = document.getElementById("movie_player").getPlaybackRate(); // can probably delete this line. it's useless because i do it again in renderTimeSaveText();
     renderTimeSaveText();
+    // toggleDarkModeText();
 }
 
 function toggleDarkModeText() {
-    let dark = document.querySelector("html").getAttribute("dark");
-    if (dark == "true") {
-        document.getElementById("time-saved").style.color = "#aaa";
-        textColor = "#aaa";
-    } else {
-        document.getElementById("time-saved").style.color = "#606060";
-        textColor = "#606060";
+    if (document.body.contains(document.getElementById("time-saved"))) {
+        let isDark = document.querySelector("html").getAttribute("dark");
+
+        if (isDark == "true") {
+            document.getElementById("time-saved").style.color = "#aaa";
+            textColor = "#aaa";
+        } else {
+            document.getElementById("time-saved").style.color = "#606060";
+            textColor = "#606060";
+        }
     }
 }
 
@@ -89,7 +97,8 @@ document.addEventListener("click", function(event) {
     let element = event.target;
     if (
         element.tagName == "DIV" &&
-        element.classList.contains("ytp-menuitem-label")
+        (element.classList.contains("ytp-menuitem-label") ||
+            element.classList.contains("ytp-slider-handle"))
     ) {
         updatePlaybackRate();
     }
