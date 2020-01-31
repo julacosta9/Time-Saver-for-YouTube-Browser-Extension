@@ -6,11 +6,11 @@
     "description": "Display the time saved by speeding up video playback",
     // "background": {
     //     "persistent": false,
-    //     "scripts": ["js/background.js"]
+    //     "scripts": ["background.js"]
     // },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": ["*://www.youtube.com/*watch?*"],
             "js": ["timeSaveCalculation.js"],
             "run_at": "document_idle"
         }
@@ -20,7 +20,8 @@
         "activeTab",
         "declarativeContent",
         "webNavigation",
-        "https://www.youtube.com/"
+        "*://www.youtube.com/*watch?*",
+        "tabs"
     ],
     "page_action": {
         "default_popup": "html/popup.html",
@@ -40,9 +41,9 @@
 }
 
 // TODO
-    // don't display anything if speed is set to normal
-    // say how long video is if playback rate is less than 1
+    // get code to run on every page load/url change
+    // [COMPLETE] figure out the content script match parameter in the manifest  
     // [COMPLETE] somehow account for dark mode
     // [COMPLETE] figure out better config for mutation observer
-    // figure out the content script match parameter in the manifest  *://www.youtube.com/watch*
-    // get code to run on every page load/url change
+    // [COMPLETE] don't display anything if speed is set to normal
+    // [COMPLETE] say how long video is if playback rate is less than 1
