@@ -3,13 +3,6 @@ let duration;
 let playbackRate;
 let timeSavedDiv;
 let textColor = "#606060";
-// let url = window.location.href;
-
-setTimeout(function() {
-    console.log(document.getElementById("info-text"));
-    renderTimeSaveText();
-    toggleDarkModeText();
-}, 700);
 
 function renderTimeSaveText() {
     moviePlayer = document.getElementById("movie_player");
@@ -63,15 +56,7 @@ function renderTimeSaveText() {
     infoTextDiv.append(timeSavedDiv);
 }
 
-let counter = 1;
-function updatePlaybackRate() {
-    // console.log(counter++);
-    playbackRate = document.getElementById("movie_player").getPlaybackRate(); // can probably delete this line. it's useless because i do it again in renderTimeSaveText();
-    renderTimeSaveText();
-    // toggleDarkModeText();
-}
-
-function toggleDarkModeText() {
+function toggleDarkModeTextColor() {
     if (document.body.contains(document.getElementById("time-saved"))) {
         let isDark = document.querySelector("html").getAttribute("dark");
 
@@ -93,6 +78,14 @@ function deleteTimeSaveNodes() {
     }
 }
 
+// fires on youtube's asyc page loads
+window.addEventListener("yt-navigate-finish", function () {
+    console.log("yt-navigate-finish listener has fired")
+    renderTimeSaveText();
+    toggleDarkModeTextColor();
+});
+
+// fires when clicking within the movie player settings menu
 document.addEventListener("click", function(event) {
     let element = event.target;
     if (
@@ -100,11 +93,13 @@ document.addEventListener("click", function(event) {
         (element.classList.contains("ytp-menuitem-label") ||
             element.classList.contains("ytp-slider-handle"))
     ) {
-        updatePlaybackRate();
+        // updatePlaybackRate();
+        renderTimeSaveText();
+        toggleDarkModeTextColor();
     }
 });
 
-// Mutation Observer - Currently triggered anytime there's an attribute change on the html element
+// mutation observer that fires when an attribute changes on the html tag node
 let targetNode = document.querySelector("html");
 let observerOptions = {
     attributes: true,
@@ -113,5 +108,5 @@ let observerOptions = {
     characterData: false
 };
 
-let observer = new MutationObserver(toggleDarkModeText);
+let observer = new MutationObserver(toggleDarkModeTextColor);
 observer.observe(targetNode, observerOptions);
