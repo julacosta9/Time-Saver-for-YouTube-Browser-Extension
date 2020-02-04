@@ -1,50 +1,27 @@
 {
     "manifest_version": 2,
     "name": "YouTube Time Save Calculator",
-    "options_page": "html/options.html",
-    "version": "1.0",
+    "version": "0.01",
     "description": "Display the time saved by speeding up video playback",
-    // "background": {
-    //     "persistent": false,
-    //     "scripts": ["background.js"]
-    // },
     "content_scripts": [
         {
             "matches": ["*://www.youtube.com/*"],
-            "js": ["timeSaveCalculation.js"],
+            "js": ["content-script.js"],
             "run_at": "document_idle"
         }
     ],
-    "web_accessible_resources": ["script.js"],
+    "web_accessible_resources": ["youtube-script.js"],
     "permissions": [
-        "activeTab",
-        "declarativeContent",
-        "webNavigation",
-        "*://www.youtube.com/*",
-        "tabs"
-    ],
-    "page_action": {
-        "default_popup": "html/popup.html",
-        "default_icon": {
-            "16": "images/get_started16.png",
-            "32": "images/get_started32.png",
-            "48": "images/get_started48.png",
-            "128": "images/get_started128.png"
-        },
-        "icons": {
-            "16": "images/get_started16.png",
-            "32": "images/get_started32.png",
-            "48": "images/get_started48.png",
-            "128": "images/get_started128.png"
-        }
-    }
+        "*://www.youtube.com/*"
+    ]
 }
 
-// TODO
+// TODO //
+    // come up with name and description, determine if lose is best word to use for negative playback
     // [COMPLETE] get code to run on every page load/url change
-    // [COMPLETE] figure out the content script match parameter in the manifest  
+    // [COMPLETE] figure out the content script match parameter in the manifest
     // [COMPLETE] somehow account for dark mode
     // [COMPLETE] figure out better config for mutation observer
     // [COMPLETE] don't display anything if speed is set to normal
     // [COMPLETE] say how long video is if playback rate is less than 1
-    // matches that work: *://www.youtube.com/*watch?*
+    // [INFO] matches that work: *://www.youtube.com/*watch?*
