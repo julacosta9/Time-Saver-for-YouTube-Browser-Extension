@@ -10,7 +10,7 @@
     // },
     "content_scripts": [
         {
-            "matches": ["*://www.youtube.com/*watch?*"],
+            "matches": ["*://www.youtube.com/*"],
             "js": ["timeSaveCalculation.js"],
             "run_at": "document_idle"
         }
@@ -20,7 +20,7 @@
         "activeTab",
         "declarativeContent",
         "webNavigation",
-        "*://www.youtube.com/*watch?*",
+        "*://www.youtube.com/*",
         "tabs"
     ],
     "page_action": {
@@ -41,9 +41,10 @@
 }
 
 // TODO
-    // get code to run on every page load/url change
+    // [COMPLETE] get code to run on every page load/url change
     // [COMPLETE] figure out the content script match parameter in the manifest  
     // [COMPLETE] somehow account for dark mode
     // [COMPLETE] figure out better config for mutation observer
     // [COMPLETE] don't display anything if speed is set to normal
     // [COMPLETE] say how long video is if playback rate is less than 1
+    // matches that work: *://www.youtube.com/*watch?*
