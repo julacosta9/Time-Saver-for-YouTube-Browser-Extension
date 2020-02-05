@@ -80,7 +80,7 @@ function deleteTimeSavedChildElements() {
 }
 
 // fires on youtube's asyc page loads
-window.addEventListener("yt-navigate-finish", function () {
+window.addEventListener("yt-navigate-finish", function() {
     renderTimeSaveText();
     toggleDarkModeTextColor();
 });
@@ -91,7 +91,11 @@ document.addEventListener("click", function(event) {
     if (
         element.tagName == "DIV" &&
         (element.classList.contains("ytp-menuitem-label") ||
-            element.classList.contains("ytp-slider-handle"))
+            element.classList.contains("ytp-slider-section") ||
+            element.classList.contains("ytp-slider-handle") ||
+            element.classList.contains("ytp-speedslider-component") ||
+            element.classList.contains("ytp-speedslider-text") ||
+            element.classList.contains("ytp-panel"))
     ) {
         renderTimeSaveText();
         toggleDarkModeTextColor();
