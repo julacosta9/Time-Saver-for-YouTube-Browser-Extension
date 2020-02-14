@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Playback Speed Time Calculator for YouTube",
+    "name": "Playback Speed Calculator for YouTube",
     "version": "0.0.0.1",
     "description": "Display the time saved by speeding up video playback",
     "content_scripts": [
@@ -15,13 +15,3 @@
         "*://www.youtube.com/*"
     ]
 }
-
-// TODO //
-    // come up with name and description, determine if lose is best word to use for negative playback
-    // [COMPLETE] get code to run on every page load/url change
-    // [COMPLETE] figure out the content script match parameter in the manifest
-    // [COMPLETE] somehow account for dark mode
-    // [COMPLETE] figure out better config for mutation observer
-    // [COMPLETE] don't display anything if speed is set to normal
-    // [COMPLETE] say how long video is if playback rate is less than 1
-    // [INFO] matches that work: *://www.youtube.com/*watch?*
