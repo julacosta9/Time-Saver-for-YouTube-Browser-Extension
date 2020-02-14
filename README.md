@@ -15,9 +15,10 @@ The Playback Speed Calculator is a Chrome extension that displays the time you s
 ![Extension Screenshot - Example of Custom Playback Speed](https://i.imgur.com/VQKNah2.png "Extension Screenshot - Example of Custom Playback Speed")
 
 ## How To Install the Extension
-1. Open Chrome > click the menu button in the top-right > click Settings
-2. Click Extensions in the left navigation bar
-3. Click 'Developer mode' button in the top-right
-4. Click 'Load unpacked'
-5. Select the 'youtube-time-save-chrome-extension' folder. NOTE: select the actual folder, not any files within it.
-6. Go to Youtube and try it out :D
+1. Download the zip file and unzip it
+2. Open Chrome > click the menu button in the top-right > click Settings
+3. Click Extensions in the left navigation bar
+4. Click 'Developer mode' button in the top-right
+5. Click 'Load unpacked'
+6. Select the unzipped folder. NOTE: select the actual folder, not any files within it.
+7. Go to Youtube and try it out :D
