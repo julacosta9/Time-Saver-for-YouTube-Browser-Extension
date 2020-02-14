@@ -79,7 +79,7 @@ function deleteTimeSavedChildElements() {
     }
 }
 
-// fires on youtube's asyc page loads
+// fires on youtube's async page loads
 window.addEventListener("yt-navigate-finish", function() {
     renderTimeSaveText();
     toggleDarkModeTextColor();
