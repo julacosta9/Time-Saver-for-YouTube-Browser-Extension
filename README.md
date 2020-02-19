@@ -5,7 +5,7 @@ The Playback Speed Calculator is a Chrome extension that displays the time you s
 **[Here's a GIF of the extension in action](https://giant.gfycat.com/ComposedRigidBanteng.mp4)**
 
 ### Screenshots
-**The extension does not interfer with the video watching experience**
+**The extension does not interfere with the video watching experience**
 ![Extension Screenshot - Example of Time Saved](https://i.imgur.com/AYFW74m.png "Extension Screenshot - Example of Time Lost")
 
 **The text updates accordingly if the playback speed is below 1x**
