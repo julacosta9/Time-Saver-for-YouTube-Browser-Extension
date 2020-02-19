@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Playback Speed Calculator for YouTube",
+    "name": "Playback Speed Time Saver for YouTube",
     "version": "0.0.0.1",
     "description": "Display the time saved by speeding up video playback",
     "content_scripts": [
