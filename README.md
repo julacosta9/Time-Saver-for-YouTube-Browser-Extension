@@ -1,6 +1,6 @@
-# Playback Speed Time Saver for YouTube
+# Time Saver for YouTube
 
-The Playback Speed Time Saver is a Chrome extension that displays the time you save when you change the playback speed of a YouTube video. When the playback speed is changed, text will unobtrusively display below the video.
+A Chrome extension that displays the time you save when you change the playback speed of a YouTube video. When the playback speed is changed, text will unobtrusively display below the video.
 
 **[Here's a GIF of the extension in action](https://giant.gfycat.com/ComposedRigidBanteng.mp4)**
 
