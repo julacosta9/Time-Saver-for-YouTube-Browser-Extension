@@ -2,6 +2,8 @@
 
 A Chrome extension that displays the time you save when you change the playback speed of a YouTube video. When the playback speed is changed, text will unobtrusively display below the video.
 
+**[Download from the Chrome Web Store](https://chrome.google.com/webstore/detail/nkfcgfkioefgclgcilgocbdnlhbfmcaf/publish-accepted?authuser=0&hl=en)**
+
 **[Here's a GIF of the extension in action](https://giant.gfycat.com/ComposedRigidBanteng.mp4)**
 
 ### Screenshots
