@@ -18,6 +18,6 @@
 
 ## Screenshots
 
-<img src="https://addons.cdn.mozilla.net/user-media/previews/full/236/236374.png?modified=1587411949" />
+<img src="https://addons.cdn.mozilla.net/user-media/previews/full/240/240842.png?modified=1593661356" />
 </br >
-<img src="https://addons.cdn.mozilla.net/user-media/previews/full/236/236373.png?modified=1587411947" />
+<img src="https://addons.cdn.mozilla.net/user-media/previews/full/240/240843.png?modified=1593661355" />
