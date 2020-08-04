@@ -19,5 +19,3 @@
 ## Screenshots
 
 <img src="https://addons.cdn.mozilla.net/user-media/previews/full/240/240842.png?modified=1593661356" />
-</br >
-<img src="https://addons.cdn.mozilla.net/user-media/previews/full/240/240843.png?modified=1593661355" />
