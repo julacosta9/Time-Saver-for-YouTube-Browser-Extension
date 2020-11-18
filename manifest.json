@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Time Saver for YouTube",
-    "version": "0.0.0.1",
+    "version": "0.0.0.2",
     "description": "Display the time saved when the playback speed of a YouTube video is adjusted.",
     "content_scripts": [
         {
