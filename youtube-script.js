@@ -102,6 +102,23 @@ document.addEventListener("click", function(event) {
     }
 });
 
+let keysPressed = {};
+
+// fires when a built in YouTube shortcut is pressed
+document.addEventListener('keydown', (event) => {
+  keysPressed[event.key] = true; // store which key is pressed
+
+  // if shift + "," or "." are pressed, run function to render text
+  if (keysPressed['Shift'] && event.key == '<' || keysPressed['Shift'] && event.key == '>') {
+    renderTimeSaveText();
+    toggleDarkModeTextColor();
+  }
+});
+
+document.addEventListener('keyup', (event) => {
+  delete keysPressed[event.key]; // delete key that is no longer pressed from 'keysPressed' object
+});
+
 // mutation observer that fires when an attribute changes on the html tag node
 let targetNode = document.querySelector("html");
 let observerOptions = {
