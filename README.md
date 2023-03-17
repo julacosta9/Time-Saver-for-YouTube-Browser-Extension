@@ -15,7 +15,3 @@
 	 Display the time saved when the playback speed of a YouTube video is adjusted. Just change the speed and the amount of time you save will be displayed below the video. It's simple and blends in with YouTube's look and feel.
 </p>
 <br />
-
-## Screenshots
-
-<img src="https://addons.cdn.mozilla.net/user-media/previews/full/240/240842.png?modified=1593661356" />
