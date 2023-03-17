@@ -1,17 +1,15 @@
 {
-    "manifest_version": 2,
-    "name": "Time Saver for YouTube",
-    "version": "0.0.0.2",
-    "description": "Display the time saved when the playback speed of a YouTube video is adjusted.",
-    "content_scripts": [
-        {
-            "matches": ["*://www.youtube.com/*"],
-            "js": ["content-script.js"],
-            "run_at": "document_idle"
-        }
-    ],
-    "web_accessible_resources": ["youtube-script.js"],
-    "permissions": [
-        "*://www.youtube.com/*"
-    ]
+  "manifest_version": 2,
+  "name": "Time Saver for YouTube",
+  "version": "0.0.0.3",
+  "description": "Display the time saved when the playback speed of a YouTube video is adjusted.",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": ["youtube-script.js"],
+  "permissions": ["*://www.youtube.com/*"]
 }
